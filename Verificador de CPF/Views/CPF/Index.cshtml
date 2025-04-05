@@ -1,0 +1,87 @@
+﻿@model CPFViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <title>Validador de CPF</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="~/css/site.css" />
+
+</head>
+<body>
+    <div class="theme-toggle">
+        <i class="fas fa-moon" id="toggleDarkMode" title="Alternar tema"></i>
+    </div>
+
+    <div class="container">
+
+        <h1>Verificador de CPF</h1>
+
+        <form asp-action="Index" method="post">
+            <label for="cpf">Digite o CPF:</label>
+            <input type="text" id="cpf" name="CPF" value="@Model.CPF" required autocomplete="off" autocorrect="off" autocapitalize="off"/>
+
+            <button type="submit">Verificar</button>
+        </form>
+
+        @if (Model.CPFValido.HasValue) {
+            <p class="resultado">
+                CPF <strong>@Model.CPF</strong> é
+                <strong class="@(Model.CPFValido.Value ? "valido" : "invalido")">
+                    @(Model.CPFValido.Value ? "Válido" : "Inválido")
+                </strong>
+            </p>
+        }
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById("toggleDarkMode");
+
+        // Carrega o modo salvo
+        if (localStorage.getItem("dark-mode") === "true") {
+            document.body.classList.add("dark-mode");
+            toggleBtn.classList.replace("fa-moon", "fa-sun");
+        }
+
+        toggleBtn.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+            const isDark = document.body.classList.contains("dark-mode");
+
+            // Salva a preferência no navegador
+            localStorage.setItem("dark-mode", isDark);
+
+            // Troca o ícone
+            toggleBtn.classList.toggle("fa-moon");
+            toggleBtn.classList.toggle("fa-sun");
+        });
+    </script>
+    <script src="https://unpkg.com/imask"></script>
+    <script>
+        var cpfInput = document.getElementById('cpf');
+        var maskOptions = {
+            mask: '000.000.000-00'
+        };
+        var mask = IMask(cpfInput, maskOptions);
+    </script>
+    <script>
+        var cpfInput = document.getElementById('cpf');
+
+        var maskOptions = {
+            mask: '000.000.000-00',
+            lazy: true // Oculta o placeholder até começar a digitar
+        };
+
+        var mask = IMask(cpfInput, maskOptions);
+    </script>
+
+
+
+</body>
+
+</html>

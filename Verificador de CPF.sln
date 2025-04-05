@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35806.99 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Verificador de CPF", "Verificador de CPF\Verificador de CPF.csproj", "{EEF38287-5500-4EFC-A0A1-8A251915FFBF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EEF38287-5500-4EFC-A0A1-8A251915FFBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEF38287-5500-4EFC-A0A1-8A251915FFBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEF38287-5500-4EFC-A0A1-8A251915FFBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEF38287-5500-4EFC-A0A1-8A251915FFBF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {55595D95-5454-4EB2-86FC-2461E4F49C7D}
+	EndGlobalSection
+EndGlobal
